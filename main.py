@@ -5,12 +5,12 @@ from string import ascii_lowercase as alpha
 
 regional = ":regional_indicator_{}:"
  
-special = {"!" : ":exclamation:", "?" : ":question:", "#" : ":hash:", "*" : ":asterisk:", "0" : ":zero:", "1" : ":one:", "2" : ":two:", "3" : ":three:", "4" : ":four:", "5" : ":five:", "6" : ":six:", "7" : ":seven:", "8" : ":eight:", "9" : ":nine:"}
+special = {"!" : ":exclamation:", "?" : ":question:", "#" : ":hash:", "*" : ":asterisk:", "0" : ":zero:", "1" : ":one:", "2" : ":two:", "3" : ":three:", "4" : ":four:", "5" : ":five:", "6" : ":six:", "7" : ":seven:", "8" : ":eight:", "9" : ":nine:" , "-" : ":heavy_minus_sign:" , "+" : "heavy_plus_sign" , "$" : ":heavy_dollar_sign" , "=" : ":heavy_equals_sign"}
 spoiler = "||{}||"
 
 def regional_wrap(s : str)->str:
     res = [] 
-    for i in s:
+    for i in s.lower():
         if i in special:
             res.append(special[i])
         elif i in alpha:
